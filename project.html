@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MK - PROJECTS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="pointer"></div>
+    <div class="project_container">
+      <div class="project_loading_container">
+        <h1>EXPLORE MY DEV. SKILLS</h1>
+        <i class="ri-arrow-right-line"></i>
+      </div>
+
+      <div class="project_contain">
+        <a href="index.html" id="back_btn"
+          ><i class="ri-arrow-left-line"></i
+        ></a>
+
+        <div class="project_content">
+          <div class="project_heading">
+            <h1>PROJECTS</h1>
+          </div>
+
+          <div class="projects">
+            <div class="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item">
+                  <a href="https://gromo-9999.firebaseapp.com/home"
+                    ><img
+                      src="./public/images/grocery-cart.png"
+                      alt="Gromo"
+                  /></a>
+                </div>
+                <div class="carousel-item">
+                  <a href="https://device-tracker-nalm.onrender.com"
+                    ><img
+                      src="https://i.ibb.co/XJdw1BD/location.png"
+                      alt="device tracker"
+                  /></a>
+                </div>
+                <!-- New items -->
+                <div class="carousel-item">
+                  <a href="https://pinterest-clone-000i.onrender.com"
+                    ><img
+                      src="https://i.ibb.co/dtMJcXw/pinterest.png"
+                      alt="image 4"
+                  /></a>
+                </div>
+                <div class="carousel-item">
+                  <a href="https://taskify-o99p.onrender.com"
+                    ><img
+                      src="https://i.ibb.co/fFvBFfG/notes.png"
+                      alt="image 5"
+                  /></a>
+                </div>
+                <div class="carousel-item">
+                  <a href="https://mydrive-7sm0.onrender.com"
+                    ><img
+                      src="./public/images/google-drive (1).png"
+                      alt=""
+                  /></a>
+                </div>
+              </div>
+              <button class="carousel-control prev" onclick="prevSlide()">
+                &#10094;
+              </button>
+              <button class="carousel-control next" onclick="nextSlide()">
+                &#10095;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+    <script>
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        const slides = document.querySelectorAll(".carousel-item");
+        if (index >= slides.length) {
+          currentIndex = 0;
+        } else if (index < 0) {
+          currentIndex = slides.length - 1;
+        } else {
+          currentIndex = index;
+        }
+        const offset = -currentIndex * 100;
+        document.querySelector(
+          ".carousel-inner"
+        ).style.transform = `translateX(${offset}%)`;
+      }
+
+      function nextSlide() {
+        showSlide(currentIndex + 1);
+      }
+
+      function prevSlide() {
+        showSlide(currentIndex - 1);
+      }
+
+      // Initialize the carousel
+      showSlide(currentIndex);
+    </script>
+  </body>
+</html>
